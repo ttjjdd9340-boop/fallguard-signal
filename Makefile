@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=gnu11 -Wall -Wextra -O2
+CFLAGS = -std=gnu11 -Wall -Wextra -O2 -MMD -MP
 OBJS = main.o detector.o ring_buffer.o low_pass.o
 
 fallguard: $(OBJS)
@@ -8,5 +8,7 @@ fallguard: $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
+-include $(OBJS:.o=.d)
+
 clean:
-	rm -f $(OBJS) fallguard
+	rm -f $(OBJS) $(OBJS:.o=.d) fallguard
