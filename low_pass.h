@@ -1,7 +1,7 @@
 #ifndef LOW_PASS_H
 #define LOW_PASS_H
 
-/* 저역통과 필터 (지수 이동평균): 새 값 alpha + 이전 결과 (1-alpha) */
+/* 저역통과 필터 (지수 이동평균): 새 값 × alpha + 이전 결과 × (1 - alpha) */
 typedef struct {
     float alpha;
     float prev;

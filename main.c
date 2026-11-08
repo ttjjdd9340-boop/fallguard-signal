@@ -8,7 +8,7 @@
 #define IMPACT_SECONDS 0.3f
 #define PI 3.14159265f
 
-/* 가짜 센서 데이터에 넣을 충격 상황 */
+/* 합성 센서 데이터에 넣을 충격 상황 */
 typedef struct {
     int   start_sec;         /* 충격이 시작되는 시각 */
     float peak_g;            /* 충격 때 가속도 최댓값 */
